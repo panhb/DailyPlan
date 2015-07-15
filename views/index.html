@@ -1,0 +1,83 @@
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DailyPlan</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/custom/bootstrap.min.css" rel="stylesheet">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="stylesheets/fullcalendar.css" rel="stylesheet">
+	    <link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.print.css" rel="stylesheet" media="print">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.css" rel="stylesheet">
+        <link href="stylesheets/custom.css" rel="stylesheet"> 
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.js"></script>
+		<script src="javascripts/lang-all.js"></script>
+    </head>
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+            	<div class="row">
+                 <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                            <div class="x_title">
+                                <h2><a href="/" style='text-decoration:none;'>DailyPlan</a><small>日历</small></h2>
+								<a href="plan/add" type="button" class="btn  btn-success" title="新增" style="float:right"> <i class="fa fa-plus"></i> </a>
+								<a href="plan/list" type="button" class="btn  btn-info" title="列表" style="float:right"> <i class="fa fa-list"></i> </a>	
+                                <div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+								<div id='calendar'></div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+       
+        <script>
+            $(window).load(function () {
+                
+                var calendar = $('#calendar').fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay'
+                    },
+					lang: 'zh-cn',
+                    selectable: true,
+                    selectHelper: true,
+                    select: function (start, end, allDay) {
+                         
+                    },
+                    eventClick: function (calEvent, jsEvent, view) {
+                        calendar.fullCalendar('unselect');
+                    },
+                    eventRender: function (event, element) {
+                        /*
+                        var a = element.text().split(/ /g);
+                        var html = '<div class="fc-content"><span class="fc-time">'+a[0]+'</span> <span title="'+a[1]+'" class="fc-title">'+a[1]+'</span></div>';
+                        element.html(html)
+                        */
+                        element.qtip({
+                            content: event.description,
+                            position:{
+                                my: 'left  center',
+                                at: 'right  center'
+                            }
+                        });
+                    },
+                    editable: true,
+					eventLimit: true,   
+					events: '/planData'
+                    
+                });
+            });
+        </script>
+    </body>
+</html>
