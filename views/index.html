@@ -15,7 +15,8 @@
         <link href="stylesheets/custom.css" rel="stylesheet"> 
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>
+        <script src="javascripts/lunar.js"></script>
+        <script src="javascripts/fullcalendar.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.js"></script>
 		<script src="javascripts/lang-all.js"></script>
     </head>
@@ -50,6 +51,7 @@
                         right: 'month,agendaWeek,agendaDay'
                     },
 					lang: 'zh-cn',
+                    firstDay:0,
                     selectable: true,
                     selectHelper: true,
                     select: function (start, end, allDay) {

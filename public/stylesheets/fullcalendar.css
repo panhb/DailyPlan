@@ -666,6 +666,7 @@ a.fc-more:hover {
 .fc-basic-view .fc-week-number,
 .fc-basic-view .fc-day-number {
     padding: 0 2px;
+
 }
 
 .fc-basic-view td.fc-week-number span,
@@ -955,4 +956,42 @@ be a descendant of the grid when it is being dragged.
 
 .fc-time-grid-event .fc-resizer:after {
     content: "=";
+}
+
+
+
+.fc-day-header {
+    //color: #25992E;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+
+
+.fc-day-number{
+    font-size: 16px;
+    font-family: Arial;
+    font-weight: 600;
+    padding-top: 12px;
+    color: #555;
+}
+
+.fc-day-cnTerm{
+    color:#6ABA49;
+    font-size: 13px;
+}
+
+.fc-day-cnDate{
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    color: #999;
+}
+
+.fc-sun, .fc-sat {
+    color: #ED6D23;
+}
+
+.fc-sun .fc-day-number, .fc-sun .fc-day-cnDate, 
+.fc-sat .fc-day-number, .fc-sat .fc-day-cnDate{
+color:#ed6d23
 }
