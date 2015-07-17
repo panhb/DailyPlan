@@ -23,7 +23,7 @@ router.get('/planData', function(req, res, next) {
 			a.push(ob);
 		}
 		res.send(a);
-	}) 
+	}); 
 });
 
 router.get('/plan/add', function(req, res, next) {
@@ -68,7 +68,7 @@ router.get('/plan/list', function(req, res, next) {
 			}
 			res.render('planlist', { list: plans });
 		}		
-	})
+	});
 });
 
 
