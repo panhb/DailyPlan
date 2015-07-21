@@ -1,21 +1,12 @@
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-	<meta name="keywords" content="dailyplan ,daily plan ,daily ,plan ,nodejs ,express ">
-	<meta name="description" content="to do list manager">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+    <%- partial('common/meta') %>
     <title>DailyPlan List</title>
-    <!-- Bootstrap core CSS -->
-    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Custom styling plus plugins -->
-    <link href="/stylesheets/custom.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <%- partial('common/head') %>
 </head>
 <body class="nav-md">
+    <%- partial('common/ie') %>
     <div class="container body">
         <div class="main_container">
         	<div class="row">
@@ -31,7 +22,6 @@
                                         <thead>
                                             <tr class="headings">    
                                                 <th class="column-title">标题 </th>
-												
                                                 <!--<th class="column-title">内容 </th>
                                                 <th class="column-title">用户 </th>-->
                                                 <th class="column-title">创建时间 </th>
@@ -68,6 +58,7 @@
 			</div>        
         </div>
     </div>
+    <%- partial('common/foot') %>
 </body>
 </html>
 

@@ -1,28 +1,15 @@
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- Meta, title, CSS, favicons, etc. -->
-        <meta charset="utf-8">
-		<meta name="keywords" content="dailyplan ,daily plan ,daily ,plan ,nodejs ,express ">
-		<meta name="description" content="to do list manager">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <%- partial('common/meta') %>
         <title>DailyPlan</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/custom/bootstrap.min.css" rel="stylesheet">
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		<%- partial('common/head') %>
 		<link href="stylesheets/fullcalendar.css" rel="stylesheet">
 	    <link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.print.css" rel="stylesheet" media="print">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.css" rel="stylesheet">
-        <link href="stylesheets/custom.css" rel="stylesheet"> 
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-        <script src="javascripts/lunar.js"></script>
-        <script src="javascripts/fullcalendar.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.js"></script>
-		<script src="javascripts/lang-all.js"></script>
     </head>
     <body class="nav-md">
+        <%- partial('common/ie') %>
         <div class="container body">
             <div class="main_container">
             	<div class="row">
@@ -42,10 +29,14 @@
 				</div>
             </div>
         </div>
-       
+        <%- partial('common/foot') %>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+        <script src="javascripts/lunar.js"></script>
+        <script src="javascripts/fullcalendar.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.js"></script>
+        <script src="javascripts/lang-all.js"></script>
         <script>
             $(window).load(function () {
-                
                 var calendar = $('#calendar').fullCalendar({
                     header: {
                         left: 'prev,next today',
@@ -79,7 +70,6 @@
                     editable: true,
 					eventLimit: true,   
 					events: '/planData'
-                    
                 });
             });
         </script>
